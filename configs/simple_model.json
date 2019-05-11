@@ -1,6 +1,6 @@
 {
-  "mode":"test",
-  "num_epochs": 8,
+  "mode":"train",
+  "num_epochs": 100,
   "num_iter_per_epoch": 11,
   "learning_rate": 0.001,
   "batch_size": 16,
@@ -8,10 +8,16 @@
   "state_size": [32, 32, 3],
   "val_split_ratio":0.2,
   "max_to_keep":3,
-  "train_data_path":"/media/syrix/programms/projects/cifar-100-python/train",
-  "test_data_path":"/media/syrix/programms/projects/cifar-100-python/test",
-  "meta_data_path":"/media/syrix/programms/projects/cifar-100-python/meta",
-  "checkpoint_dir":"/media/syrix/programms/projects/Cifar-100-Classifier/saved_models/simple_model/checkpoint/",
-  "summary_dir":"/media/syrix/programms/projects/Cifar-100-Classifier/saved_models/simple_model/summary/"
+//  "train_data_path":"/media/syrix/programms/projects/cifar-100-python/train",
+//  "test_data_path":"/media/syrix/programms/projects/cifar-100-python/test",
+//  "meta_data_path":"/media/syrix/programms/projects/cifar-100-python/meta",
+//  "checkpoint_dir":"/media/syrix/programms/projects/Cifar-100-Classifier/saved_models/simple_model/checkpoint/",
+//  "summary_dir":"/media/syrix/programms/projects/Cifar-100-Classifier/saved_models/simple_model/summary/"
+  "train_data_path":"/content/cifar-100-python/train",
+  "test_data_path":"/content/cifar-100-python/test",
+  "meta_data_path":"/content/cifar-100-python/meta",
+  "checkpoint_dir":"/content/Cifar-100-Classifier/saved_models/simple_model/checkpoint/",
+  "summary_dir":"/content/Cifar-100-Classifier/saved_models/simple_model/summary/"
 
 }
+
