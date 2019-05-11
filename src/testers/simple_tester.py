@@ -22,8 +22,8 @@ class SimpleTester(BaseTest):
 
     def test_step(self):
         batch_x, batch_y = self.data.next_batch(batch_type="test")
-        feed_dict = {self.model.x: batch_x, self.model.y: batch_y, self.model.is_training: True,
-                     self.model.hold_prob:1.0}
+        feed_dict = {self.model.x: batch_x, self.model.y: batch_y, self.model.is_training: False,
+                     self.model.hold_prob: 1.0}
 
         _, loss, acc = self.sess.run([self.model.train_step, self.model.cross_entropy, self.model.accuracy],
                                      feed_dict=feed_dict)
