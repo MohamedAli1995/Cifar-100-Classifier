@@ -17,7 +17,8 @@ def main():
     #     print("Missing or invalid arguments")
     #     exit(0)
 
-    config = processing_config("/media/syrix/programms/projects/Cifar-100-Classifier/configs/simple_model.json")
+    # config = processing_config("/media/syrix/programms/projects/Cifar-100-Classifier/configs/simple_model.json")
+    config = processing_config("/content/Cifar-100-Classifier/configs/simple_model.json")
     create_dirs([config.summary_dir, config.checkpoint_dir])
     sess = tf.Session()
 
