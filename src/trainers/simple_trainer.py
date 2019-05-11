@@ -8,7 +8,7 @@ class SimpleTrainer(BaseTrain):
         super(SimpleTrainer, self).__init__(sess, model, data, config, logger)
 
     def train_epoch(self):
-        loop = tqdm(range(self.config.num_iter_per_epoch))
+        loop = tqdm(range(self.data.num_batches_train))
         losses = []
         accs = []
         for _ in loop:
@@ -17,7 +17,9 @@ class SimpleTrainer(BaseTrain):
             accs.append(acc)
         loss = np.mean(losses)
         acc = np.mean(accs)
-
+        print("accuracy: ", acc)
+        print("loss: ", loss)
+        print(self.model.cur_epoch_tensor.eval(self.sess))
         cur_it = self.model.global_step_tensor.eval(self.sess)
 
         summaries_dict = {
@@ -28,7 +30,7 @@ class SimpleTrainer(BaseTrain):
         self.model.save(self.sess)
 
     def train_step(self):
-        batch_x, batch_y = next(self.data.next_batch(self.config.batch_size))
+        batch_x, batch_y = self.data.next_batch(batch_type="train")
         feed_dict = {self.model.x: batch_x, self.model.y: batch_y, self.model.is_training: True,
                      self.model.hold_prob: 0.5}
 
