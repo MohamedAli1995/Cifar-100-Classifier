@@ -6,7 +6,7 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 # Table of contents
 
 - [Project structure](#project-structure)
-- [Download Pretrained Models](#Download-pretrained-models)
+- [Download pretrained models](#Download-pretrained-models)
 - [Dependencies](#install-dependencies)
 - [Config file](#config-file)
 - [How to train](#Model-training)
@@ -150,7 +150,7 @@ Set the following attributes in the config file:
 Then change directory to the project's folder and run:<br>
 ```python3.6 -m src.mains.main --img_path="Path to your image"```
 
-You can use my pretrained model see [Download Pretrained Models](#Download-pretrained-models) <br>
+You can use my pretrained model see [Download pretrained models](#Download-pretrained-models) <br>
 
 
 
