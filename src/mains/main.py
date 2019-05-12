@@ -42,7 +42,7 @@ def main():
 
     model.load(sess)
     if config.mode == "train":
-        trainer = SimpleTrainer(sess, model, data, config, logger)
+        trainer = TinyVGGTrainer(sess, model, data, config, logger)
         trainer.train()
     else:
         tester = SimpleTester(sess, model, data, config, logger)
