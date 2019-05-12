@@ -11,7 +11,7 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 - [Config file](#config-file)
 - [How to train](#Model-training)
 - [How to test](#Model-testing)
-- [How to predict images using pretrained models](#Make-predictions-with-pretrained-models)
+- [How to predict class of images using pretrained models](#Make-predictions-with-pretrained-models)
 
 
 
