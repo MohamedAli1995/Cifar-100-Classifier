@@ -1,18 +1,17 @@
 # Cifar-100-Classifier
 A Cifar-100 classifier with well designed architecture and good OOP design.<br>
-This project follows the **best practice tensorflow folder structure of** [Tensorflow Best Practice](https://github.com/moemen95) 
+This project follows the **best practice tensorflow folder structure of** [Tensorflow Best Practice](https://github.com/MrGemy95/Tensorflow-Project-Template) 
 
 
 # Table of contents
 
 - [Project structure](#project-structure)
-
+- [Dependencies](#install-dependencies)
 
 
 
 
 # Project structure
-Folder structure
 --------------
 
 ```
@@ -48,3 +47,31 @@ Folder structure
      ├── config.py  - Contains utility functions to handle json config file.
      ├── logger.py  - Contains Logger class which handles tensorboard.
      └── utils.py   - Contains utility functions to parse arguments and handle pickle data.     
+```
+
+# Install dependencies
+
+Python3.x <br>
+
+Tensorflow
+```
+[Install Tensorflow](https://www.tensorflow.org/install)
+```
+Tensorboard <br>
+OpenCV
+```
+pip3 install opencv-contrib-python
+```
+Numpy
+```
+pip3 install numpy
+```
+
+bunch
+```
+pip3 install bunch
+```
+tqdm
+```
+pip3 install tqdm
+```
