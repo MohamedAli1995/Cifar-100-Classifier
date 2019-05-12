@@ -125,24 +125,24 @@ Then change directory to the project's folder and run:
 python3.6 -m src.mains.main
 
 # Model testing
-To test the model on test_set, things are the same as [model_training](#model-training) except:
+To test the model on test_set, things are the same as [model_training](#model-training) except:<br>
 change the following attributes in config file:<br>
 ```
 "mode":"test",
 "test_data_path": set it to the path of test data.
 ```
-Then change directory to the project's folder and run:
+Then change directory to the project's folder and run:<br>
 python3.6 -m src.mains.main
 
 # Make predictions with pretrained models
-To make predictions by using images of any size and any format:
+To make predictions by using images of any size and any format:<br>
 Set the following attributes in the config file:
 ```
 "mode":"prediction",
 "model":"TinyVGG",
 "checkpoint_dir": set it to the path of the checkpoints of the TinyVgg model.
 ```
-Then change directory to the project's folder and run:
+Then change directory to the project's folder and run:<br>
 python3.6 -m src.mains.main -img_path="Path to your image"
 
 
