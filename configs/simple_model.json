@@ -1,9 +1,9 @@
 {
-  "mode":"train",
+  "mode":"test",
   "num_epochs": 400,
   "num_iter_per_epoch": 11,
   "learning_rate": 0.001,
-  "batch_size": 128,
+  "batch_size": 256,
   "val_per_epoch": 1,
   "state_size": [32, 32, 3],
   "val_split_ratio":0.2,
