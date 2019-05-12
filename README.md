@@ -81,6 +81,7 @@ In order to train, pretrain or test the model you need first to edit the config 
 ```
 {
   "mode":"train",                  - mode:train, test, prediction.
+  "model":"TinyVgg",               - model_name to be used, leave it to TinyVGG it has the best accuracy. 
   "num_epochs": 800,               - Numer of epochs to train the model if it is in train mode.
   "learning_rate": 0.0001,         - Learning rate used for training the model.
   "batch_size": 256,               - Batch size for training, validation and testing sets(#TODO: edit single batch_size per mode)
@@ -94,7 +95,7 @@ In order to train, pretrain or test the model you need first to edit the config 
   "train_data_path":"path_to_training_set",                      - Path to training data.
   "test_data_path":"path_to_test_set",                           - Path to test data.
   "meta_data_path":"path_to_dataset_meta_data",                  - Path to meta-data. 
-  "checkpoint_dir":"path_to_store_the_model_checkpoints",        - Path to checkpoints store location.
-  "summary_dir":"path_to_store_model_summaries_for_tensorboard"  - Path to summaries store location.
+  "checkpoint_dir":"path_to_store_the_model_checkpoints",        - Path to checkpoints store location/ or loading model.
+  "summary_dir":"path_to_store_model_summaries_for_tensorboard"  - Path to summaries store location/.
 }
 ```
