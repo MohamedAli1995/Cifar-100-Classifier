@@ -126,7 +126,7 @@ set:<br>
 "summary_dir": path to store the model summaries for tensorboard, e.g: "/content/saved_models/tiny_vgg_model/summary/"
 ```
 Then change directory to the project's folder and run:
-python3.6 -m src.mains.main
+python3.6 -m src.mains.main --config path_to_config_file
 
 # Model testing
 To test the model on test_set, things are the same as [model_training](#model-training) except:<br>
@@ -136,7 +136,7 @@ change the following attributes in config file:<br>
 "test_data_path": set it to the path of test data.
 ```
 Then change directory to the project's folder and run:<br>
-python3.6 -m src.mains.main
+python3.6 -m src.mains.main --config path_to_config_file
 
 
 # Make predictions with pretrained models
@@ -148,7 +148,7 @@ Set the following attributes in the config file:
 "checkpoint_dir": set it to the path of the checkpoints of the TinyVgg model.
 ```
 Then change directory to the project's folder and run:<br>
-```python3.6 -m src.mains.main --img_path="Path to your image"```
+```python3.6 -m src.mains.main --img_path="Path to your image" --config path_to_config_file```
 
 You can use my pretrained model see [Download pretrained models](#Download-pretrained-models) <br>
 
