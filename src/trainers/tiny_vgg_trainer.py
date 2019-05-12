@@ -18,7 +18,7 @@ class TinyVGGTrainer(BaseTrain):
         loss = np.mean(losses)
         acc = np.mean(accs)
         print("EPOCH: [", self.model.cur_epoch_tensor.eval(self.sess), "] train_accuracy: ",
-              acc, " train_loss: ", loss)
+              acc * 100, "% train_loss: ", loss)
         cur_it = self.model.global_step_tensor.eval(self.sess)
 
         summaries_dict = {
@@ -50,7 +50,7 @@ class TinyVGGTrainer(BaseTrain):
         loss = np.mean(losses)
         acc = np.mean(accs)
         print("EPOCH: [", self.model.cur_epoch_tensor.eval(self.sess), "] val_accuracy: ",
-              acc, " val_loss: ", loss)
+              acc * 100, "% val_loss: ", loss)
 
 
     def validate_step(self):
