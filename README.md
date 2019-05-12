@@ -12,6 +12,10 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 - [How to train](#Model-training)
 - [How to test](#Model-testing)
 - [How to predict class of images using pretrained models](#Make-predictions-with-pretrained-models)
+- [Implementation details](#Implementation-details)
+     - [TinyVGG architecture](#TinyVGG-model-arch)
+     - [TinyVGG training)(#TinyVGG-training)
+     - [TinyVGG testing)(#TinyVGG-testing)
 
 
 
@@ -160,7 +164,12 @@ You can use my pretrained model see [Download pretrained models](#Download-pretr
 #TODO:
 Right now for some reasons there is nly one active model, TinyVGG model to use, I will fix the problem soon it is very simple.
 
+# Implementation details
 
+## TinyVGG model arch
 
+## TinyVGG training
+
+## TinyVGG testing
 
 
