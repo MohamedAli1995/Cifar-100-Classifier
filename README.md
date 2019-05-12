@@ -56,6 +56,7 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 
 # Download pretrained models:
 I have uploaded a pretrained TinyVGG model at [Google Drive](https://drive.google.com/open?id=1LGjmId-4rHdJIcT5Gd7ZKRuaEOHwRg6_)
+**Note: edit checkpoint file because it has absolute path and I am going to fix that soon.
 # Install dependencies
 
 * Python3.x <br>
@@ -151,6 +152,8 @@ Then change directory to the project's folder and run:<br>
 ```python3.6 -m src.mains.main --img_path="Path to your image" --config path_to_config_file```
 
 You can use my pretrained model see [Download pretrained models](#Download-pretrained-models) <br>
+**Note: edit checkpoint file because it has absolute path and I am going to fix that soon.
+
 
 
 
