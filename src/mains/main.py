@@ -10,6 +10,9 @@ from src.utils.logger import Logger
 from src.testers.simple_tester import SimpleTester
 from src.trainers.tiny_vgg_trainer import TinyVGGTrainer
 from src.models.tiny_vgg import TinyVGG
+from src.testers.tiny_vgg_tester import TinyVGGTester
+
+
 def main():
     # try:
     #     args = get_args()
@@ -45,7 +48,7 @@ def main():
         trainer = TinyVGGTrainer(sess, model, data, config, logger)
         trainer.train()
     else:
-        tester = SimpleTester(sess, model, data, config, logger)
+        tester = TinyVGGTester(sess, model, data, config, logger)
         tester.test()
 
 if __name__ == '__main__':

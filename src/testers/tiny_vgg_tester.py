@@ -2,7 +2,7 @@ import tensorflow as tf
 from src.base.base_test import BaseTest
 from tqdm import tqdm
 import numpy as np
-class SimpleTester(BaseTest):
+class TinyVGGTester(BaseTest):
     def __init__(self, sess, model, data, config, logger):
         super().__init__(sess, model, data, config, logger)
 
