@@ -76,7 +76,7 @@ class DataGenerator:
         shuffle(indices_list)
         # Next two lines may cause memory error if no sufficient ram.
         self.x_train = self.x_train[indices_list]
-        self.x_train = self.x_train[indices_list]
+        self.y_train = self.y_train[indices_list]
 
     def next_batch(self, batch_type="train"):
         if batch_type == "train":

@@ -14,7 +14,7 @@
   "test_data_path":"/content/cifar-100-python/test",
   "meta_data_path":"/content/cifar-100-python/meta",
   "checkpoint_dir":"/content/saved_models/tiny_vgg_model/checkpoint/",
-  "summary_dir":"/content/saved_models/saved_models/tiny_vgg_model/summary/"
+  "summary_dir":"/content/saved_models/tiny_vgg_model/summary/"
 
 
 }
