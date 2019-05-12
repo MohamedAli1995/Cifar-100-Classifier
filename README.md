@@ -16,6 +16,10 @@ Folder structure
 --------------
 
 ```
+├── Configs            
+│     ├── config_model.json - Contains the paths used and config of the models(learning_rate, num_epochs, ...)
+│     └── any_other_utils_you_need
+│     
 ├──  base
 │   ├── base_model.py   - this file contains the abstract class of all models used.
 │   ├── base_train.py   - this file contains the abstract class of the trainer of all models used.
@@ -44,3 +48,4 @@ Folder structure
 └── utils
      ├── logger.py
      └── any_other_utils_you_need
+     
