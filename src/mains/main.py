@@ -22,7 +22,6 @@ def main():
         print("Missing or invalid arguments")
         exit(0)
 
-
     sess = tf.Session()
     model = TinyVGG(config)
     model.load(sess)
@@ -36,9 +35,6 @@ def main():
 
     create_dirs([config.summary_dir, config.checkpoint_dir])
 
-
-
-
     logger = Logger(sess, config)
 
     if config.mode == "train":
@@ -51,7 +47,8 @@ def main():
         tester = TinyVGGTester(sess, model, data, config, logger)
         tester.test()
     else:
-        print(" Mode: ", config.mode," is not supported")
+        print(" Mode: ", config.mode, " is not supported")
+
 
 if __name__ == '__main__':
     main()
