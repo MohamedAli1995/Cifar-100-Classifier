@@ -43,7 +43,9 @@ class DataGenerator:
         self.x_test = x_test
         self.y_test = y_test
 
-        self.prepare_new_epoch_data()
+        self.__shuffle_all_data()
+        self.__split_train_val()
+
 
         self.num_batches_train = int(np.ceil(self.x_train.shape[0] / self.config.batch_size))
         self.num_batches_val = int(np.ceil(self.x_val.shape[0] / self.config.batch_size))
@@ -53,23 +55,28 @@ class DataGenerator:
         self.indx_batch_train = 0
         self.indx_batch_val = 0
         self.indx_batch_test = 0
+        self.__shuffle_train_data()
 
-        self.shuffle_train_val()
-        self.split_train_val()
-
-    def shuffle_train_val(self):
+    def __shuffle_all_data(self):
         indices_list = [i for i in range(self.x_all_train.shape[0])]
         shuffle(indices_list)
         # Next two lines may cause memory error if no sufficient ram.
         self.x_all_train = self.x_all_train[indices_list]
         self.y_all_train = self.y_all_train[indices_list]
 
-    def split_train_val(self):
+    def __split_train_val(self):
         split_point = int(self.config.val_split_ratio * self.x_all_train.shape[0])
         self.x_train = self.x_all_train[split_point:self.x_all_train.shape[0]]
         self.y_train = self.y_all_train[split_point:self.y_all_train.shape[0]]
         self.x_val = self.x_all_train[0:split_point]
         self.y_val = self.y_all_train[0:split_point]
+
+    def __shuffle_train_data(self):
+        indices_list = [i for i in range(self.x_train.shape[0])]
+        shuffle(indices_list)
+        # Next two lines may cause memory error if no sufficient ram.
+        self.x_train = self.x_train[indices_list]
+        self.x_train = self.x_train[indices_list]
 
     def next_batch(self, batch_type="train"):
         if batch_type == "train":
