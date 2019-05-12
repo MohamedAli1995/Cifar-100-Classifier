@@ -140,6 +140,9 @@ Then change directory to the project's folder and run:<br>
 python3.6 -m src.mains.main --config path_to_config_file
 
 
+#TODO:
+Right now for some reasons there is nly one active model, TinyVGG model to use.
+
 # Make predictions with pretrained models
 To make predictions by using images of any size and any format:<br>
 Set the following attributes in the config file:
