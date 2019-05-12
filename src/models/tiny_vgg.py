@@ -2,9 +2,9 @@ from src.base.base_model import BaseModel
 import tensorflow as tf
 
 
-class BasicArchModel(BaseModel):
+class TinyVGG(BaseModel):
     def __init__(self, config):
-        super(BasicArchModel, self).__init__(config)
+        super().__init__(config)
 
         self.is_training = None
         self.x = None
