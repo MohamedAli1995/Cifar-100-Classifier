@@ -11,7 +11,11 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 - [Config file](#config-file)
 - [How to train](#Model-training)
 - [How to test](#Model-testing)
-- [How to predict images using pretrained models](#Make-predictions-with-pretrained-models)
+- [How to predict class of images using pretrained models](#Make-predictions-with-pretrained-models)
+- [Implementation details](#Implementation-details)
+     - [TinyVGG architecture](#TinyVGG-model-arch)
+     - [TinyVGG training)(#TinyVGG-training)
+     - [TinyVGG testing)(#TinyVGG-testing)
 
 
 
@@ -140,6 +144,7 @@ Then change directory to the project's folder and run:<br>
 python3.6 -m src.mains.main --config path_to_config_file
 
 
+
 # Make predictions with pretrained models
 To make predictions by using images of any size and any format:<br>
 Set the following attributes in the config file:
@@ -156,8 +161,18 @@ Then change directory to the project's folder and run:<br>
 You can use my pretrained model see [Download pretrained models](#Download-pretrained-models) <br>
 **Note: edit checkpoint file because it has absolute path and I am going to fix that soon.
 
+#TODO:
+Right now for some reasons there is nly one active model, TinyVGG model to use, I will fix the problem soon it is very simple.
 
+# Implementation details
 
+## TinyVGG model arch
+<img src="https://ibb.co/3MxTbPk"
+     alt="Image not loaded"
+     style="float: left; margin-right: 10px;" />
 
+## TinyVGG training
+
+## TinyVGG testing
 
 
