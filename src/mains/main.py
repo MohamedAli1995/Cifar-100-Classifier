@@ -8,6 +8,8 @@ from src.utils.config import processing_config
 from src.utils.dirs import create_dirs
 from src.utils.logger import Logger
 from src.testers.simple_tester import SimpleTester
+from src.trainers.tiny_vgg_trainer import TinyVGGTrainer
+from src.models.tiny_vgg import TinyVGG
 def main():
     # try:
     #     args = get_args()
@@ -34,7 +36,7 @@ def main():
     # test_x, test_y = data.next_batch(config.batch_size, batch_type="test")
     #
 
-    model = SimpleModel(config)
+    model = TinyVGG(config)
 
     logger = Logger(sess, config)
 
