@@ -148,7 +148,7 @@ Set the following attributes in the config file:
 "checkpoint_dir": set it to the path of the checkpoints of the TinyVgg model.
 ```
 Then change directory to the project's folder and run:<br>
-```python3.6 -m src.mains.main -img_path="Path to your image"```
+```python3.6 -m src.mains.main --img_path="Path to your image"```
 
 You can use my pretrained model see [Download Pretrained Models](#Download-pretrained-models) <br>
 
