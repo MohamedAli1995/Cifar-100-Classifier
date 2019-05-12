@@ -2,9 +2,9 @@ from src.base.base_model import BaseModel
 import tensorflow as tf
 
 
-class TinyVGG(BaseModel):
+class BasicArchModel(BaseModel):
     def __init__(self, config):
-        super(TinyVGG, self).__init__(config)
+        super(BasicArchModel, self).__init__(config)
 
         self.is_training = None
         self.x = None
@@ -17,8 +17,9 @@ class TinyVGG(BaseModel):
         self.init_saver()
 
     def __init_weights(self, shape):
-        init_random_dist = tf.truncated_normal(shape, stddev=0.1)
-        return tf.Variable(init_random_dist)
+        initializer = tf.contrib.layers.xavier_initializer()
+        init_xavier = initializer(shape)
+        return tf.Variable(init_xavier)
 
     def __init_bias(self, shape):
         init_bias_vals = tf.constant(0.1, shape=shape)
@@ -82,7 +83,12 @@ class TinyVGG(BaseModel):
         full_layer_1 = self.__normal_full_layer(flattened, 1024)
         batch_norm_6 = self.__batch_norm(full_layer_1)
         full_dropout_1 = tf.nn.dropout(batch_norm_6, self.hold_prob)
-        y_pred = self.__normal_full_layer(full_dropout_1, 100)
+
+        full_layer_2 = self.__normal_full_layer(full_dropout_1, 2048)
+        batch_norm_7 = self.__batch_norm(full_layer_2)
+        full_dropout_2 = tf.nn.dropout(batch_norm_7, self.hold_prob)
+
+        y_pred = self.__normal_full_layer(full_dropout_2, 100)
 
         with tf.name_scope("loss"):
             self.cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=self.y, logits=y_pred))
