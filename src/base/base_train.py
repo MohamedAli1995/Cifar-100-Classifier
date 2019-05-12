@@ -17,7 +17,7 @@ class BaseTrain:
         for cur_epoch in range(self.model.cur_epoch_tensor.eval(self.sess), self.config.num_epochs + 1, 1):
             self.data.prepare_new_epoch_data()
             self.train_epoch()
-            if cur_epoch % self.config.val_per_epoch == 0 or cur_epoch == self.config.num_epochs:
+            if self.config.use_val and (cur_epoch % self.config.val_per_epoch == 0 or cur_epoch == self.config.num_epochs):
                 self.validate_epoch()
 
             self.sess.run(self.model.increment_cur_epoch_tensor)

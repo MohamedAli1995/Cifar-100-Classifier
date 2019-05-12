@@ -65,7 +65,10 @@ class DataGenerator:
         self.y_all_train = self.y_all_train[indices_list]
 
     def __split_train_val(self):
-        split_point = int(self.config.val_split_ratio * self.x_all_train.shape[0])
+        if self.config.use_val:
+            split_point = int(self.config.val_split_ratio * self.x_all_train.shape[0])
+        else:
+            split_point = 0
         self.x_train = self.x_all_train[split_point:self.x_all_train.shape[0]]
         self.y_train = self.y_all_train[split_point:self.y_all_train.shape[0]]
         self.x_val = self.x_all_train[0:split_point]
