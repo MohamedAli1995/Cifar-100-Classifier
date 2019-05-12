@@ -172,8 +172,10 @@ Right now for some reasons there is nly one active model, TinyVGG model to use, 
      style="float: left; margin-right: 10px;" />
 
 ## TinyVGG training
-
+ I trained the TinyVGG model by splitting training_data into train/val for 200 epoch, then train for 200 epoch using all training_data.<br>
+ Acheived train accuracy of 53%
 
 ## TinyVGG testing
+   Acheived testing accuracy of 52%
 
 
