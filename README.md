@@ -167,11 +167,12 @@ Right now for some reasons there is nly one active model, TinyVGG model to use, 
 # Implementation details
 
 ## TinyVGG model arch
-<img src="https://ibb.co/3MxTbPk"
+<img src="https://github.com/MohamedAli1995/Cifar-100-Classifier/blob/master/src/models/tiny_vgg_graph.png"
      alt="Image not loaded"
      style="float: left; margin-right: 10px;" />
 
 ## TinyVGG training
+
 
 ## TinyVGG testing
 
