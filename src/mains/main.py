@@ -48,3 +48,13 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+"""
+//  "train_data_path":"/media/syrix/programms/projects/cifar-100-python/train",
+//  "test_data_path":"/media/syrix/programms/projects/cifar-100-python/test",
+//  "meta_data_path":"/media/syrix/programms/projects/cifar-100-python/meta",
+//  "checkpoint_dir":"/media/syrix/programms/projects/Cifar-100-Classifier/saved_models/simple_model/checkpoint/",
+//  "summary_dir":"/media/syrix/programms/projects/Cifar-100-Classifier/saved_models/simple_model/summary/"
+"""

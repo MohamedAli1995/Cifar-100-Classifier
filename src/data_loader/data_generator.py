@@ -60,6 +60,7 @@ class DataGenerator:
     def shuffle_train_val(self):
         indices_list = [i for i in range(self.x_all_train.shape[0])]
         shuffle(indices_list)
+        # Next two lines may cause memory error if no sufficient ram.
         self.x_all_train = self.x_all_train[indices_list]
         self.y_all_train = self.y_all_train[indices_list]
 
