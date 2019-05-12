@@ -9,14 +9,14 @@
   "val_split_ratio":0.2,
   "max_to_keep":1,
   "use_val":false,
-  "pretrain": true,
+  "pretrain": false,
 
 
-  "train_data_path":"/media/syrix/programms/projects/cifar-100-python/train",
-  "test_data_path":"/media/syrix/programms/projects/cifar-100-python/test",
-  "meta_data_path":"/media/syrix/programms/projects/cifar-100-python/meta",
-  "summary_dir":"/media/syrix/programms/projects/TinyVGG_Model/saved_models/tiny_vgg_model/summary/",
-  "checkpoint_dir":"/media/syrix/programms/projects/TinyVGG_Model/saved_models/tiny_vgg_model/checkpoint/"
+  "train_data_path":"/content/cifar-100-python/train",
+  "test_data_path":"/content/cifar-100-python/test",
+  "meta_data_path":"/content/cifar-100-python/meta",
+  "summary_dir":"/content/TinyVGG_Model/saved_models/tiny_vgg_model/summary/",
+  "checkpoint_dir":"/content/TinyVGG_Model/saved_models/tiny_vgg_model/checkpoint/"
 
 }
 
