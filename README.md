@@ -1,5 +1,7 @@
 # Cifar-100-Classifier
-A Cifar-100 classifier with well designed architecture and good OOP design.
+A Cifar-100 classifier with well designed architecture and good OOP design.<br>
+This project follows the **best practice tensorflow folder structure of** [Tensorflow Best Practice](https://github.com/moemen95) 
+
 
 # Table of contents
 
