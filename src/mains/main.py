@@ -9,7 +9,7 @@ from src.utils.dirs import create_dirs
 from src.utils.logger import Logger
 from src.testers.simple_tester import SimpleTester
 from src.trainers.tiny_vgg_trainer import TinyVGGTrainer
-from src.models.tiny_vgg import TinyVGG
+from src.models.tiny_vgg_model import TinyVGG
 from src.testers.tiny_vgg_tester import TinyVGGTester
 
 

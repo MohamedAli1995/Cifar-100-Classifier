@@ -3,7 +3,7 @@ import tensorflow as tf
 
 class BaseTrain:
     """Standard base_train-class for easy multiple-inheritance.
-    It is responsible for defining the functions to be implemented with any child.
+        It is responsible for defining the functions to be implemented with any child.
 
     Attributes:
         sess: Tensorflow session to use.
@@ -19,13 +19,15 @@ class BaseTrain:
         self.sess = sess
         self.data = data
         self.logger = logger
-        self.init = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
-        self.sess.run(self.init)
+        if not self.config.pretrain:  # If not pretrain then initialize variables.
+            self.init = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer())
+            self.sess.run(self.init)
 
     def train(self):
         """Train the model for the number of epochs in config.num_epochs.
         Calls validate_epoch if config.use_val is set to true and per config.val_per_epoch.
         Returns:
+
         """
         for cur_epoch in range(self.model.cur_epoch_tensor.eval(self.sess), self.config.num_epochs + 1, 1):
             self.data.prepare_new_epoch_data()
