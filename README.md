@@ -22,15 +22,16 @@ Folder structure
 │   └── base_test.py    - this file contains the abstract class of the testers of all models used.
 │
 ├── models              - this folder contains 2 models implemented for cifar-100.
-│   ├── tiny_vgg_model.py  - This model is somehow a tiny version of vgg16.
-│   └── simple_model.py    - The model I started with, very simple and not that bad(much better than random guess which is 1% :D) 
+│   ├── tiny_vgg_model.py  - Contains the architecture of TinyVGG model, this model is somehow a tiny version of vgg16.
+│   └── simple_model.py    - Contains the architecture of SimpleModel, the model I started with.
 │
-├── trainer             - this folder contains trainers of your project.
-│   └── example_trainer.py
-│   
+├── trainer             - this folder contains trainers used which inherit from BaseTrain.
+│   ├── tiny_vgg_trainer.py - Contains the trainer class of the TinyVGG model.  
+│   └── simple_trainer.py   - Contains the trainer class of the SimpleModel.
+| 
 ├──  mains              - here's the main(s) of your project (you may need more than one main).
 │    └── example_main.py  - here's an example of main that is responsible for the whole pipeline.
-
+|
 │  
 ├──  data _loader  
 │    └── data_generator.py  - here's the data_generator that is responsible for all data handling.
