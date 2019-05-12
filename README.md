@@ -167,7 +167,7 @@ Right now for some reasons there is nly one active model, TinyVGG model to use, 
 # Implementation details
 
 ## TinyVGG model arch
-<img src="https://drive.google.com/file/d/1XQI6Bkh5Z4GxqHqs0ereZcUchxVSN6HV/view?usp=sharing"
+<img src="https://ibb.co/3MxTbPk"
      alt="Image not loaded"
      style="float: left; margin-right: 10px;" />
 
