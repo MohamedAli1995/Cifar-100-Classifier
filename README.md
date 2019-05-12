@@ -6,6 +6,7 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 # Table of contents
 
 - [Project structure](#project-structure)
+- [Download Pretrained Models](#pretrained-models)
 - [Dependencies](#install-dependencies)
 - [Config file](#config-file)
 - [How to train](#Model-training)
@@ -52,6 +53,9 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
      └── utils.py   - Contains utility functions to parse arguments and handle pickle data.     
 ```
 
+
+# Download pretrained models:
+I have uploaded a pretrained TinyVGG model at [Google Drive](https://drive.google.com/open?id=1LGjmId-4rHdJIcT5Gd7ZKRuaEOHwRg6_)
 # Install dependencies
 
 * Python3.x <br>
@@ -134,6 +138,7 @@ change the following attributes in config file:<br>
 Then change directory to the project's folder and run:<br>
 python3.6 -m src.mains.main
 
+
 # Make predictions with pretrained models
 To make predictions by using images of any size and any format:<br>
 Set the following attributes in the config file:
@@ -143,7 +148,10 @@ Set the following attributes in the config file:
 "checkpoint_dir": set it to the path of the checkpoints of the TinyVgg model.
 ```
 Then change directory to the project's folder and run:<br>
-python3.6 -m src.mains.main -img_path="Path to your image"
+```python3.6 -m src.mains.main -img_path="Path to your image"```
+
+You can use my pretrained model see [Download Pretrained Models](#pretrained-models) <br>
+
 
 
 
