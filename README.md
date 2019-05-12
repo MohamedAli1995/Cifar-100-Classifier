@@ -51,27 +51,26 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 
 # Install dependencies
 
-Python3.x <br>
+* Python3.x <br>
 
-Tensorflow
-```
-[Install Tensorflow](https://www.tensorflow.org/install)
-```
-Tensorboard <br>
-OpenCV
+* [Tensorflow](https://www.tensorflow.org/install)
+
+* Tensorboard[optional] <br>
+* OpenCV
 ```
 pip3 install opencv-contrib-python
 ```
-Numpy
+
+* Numpy
 ```
 pip3 install numpy
 ```
 
-bunch
+* bunch
 ```
 pip3 install bunch
 ```
-tqdm
+* tqdm
 ```
 pip3 install tqdm
 ```
