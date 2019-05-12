@@ -140,8 +140,6 @@ Then change directory to the project's folder and run:<br>
 python3.6 -m src.mains.main --config path_to_config_file
 
 
-#TODO:
-Right now for some reasons there is nly one active model, TinyVGG model to use.
 
 # Make predictions with pretrained models
 To make predictions by using images of any size and any format:<br>
@@ -159,6 +157,8 @@ Then change directory to the project's folder and run:<br>
 You can use my pretrained model see [Download pretrained models](#Download-pretrained-models) <br>
 **Note: edit checkpoint file because it has absolute path and I am going to fix that soon.
 
+#TODO:
+Right now for some reasons there is nly one active model, TinyVGG model to use, I will fix the problem soon it is very simple.
 
 
 
