@@ -4,6 +4,8 @@ from src.data_loader.preprocessing import one_hot_encoding, cifar_100_data_trans
 from random import shuffle
 
 
+
+
 class DataGenerator:
     """DataGenerator class responsible for dealing with cifar-100 dataset.
 
@@ -39,38 +41,60 @@ class DataGenerator:
         self.indx_batch_train = 0
         self.indx_batch_val = 0
         self.indx_batch_test = 0
+        self.__load_meta_data()
 
-        self.__load_data()
+        if self.config.mode == "train":
+            self.__load_train_data()
+        elif self.config.mode == "test":
+            self.__load_test_data()
 
-    def __load_data(self):
+    def __load_test_data(self):
         """Private function.
-        Reads cifar-100 datase.
+        Reads cifar-100 dataset.
         Transforms cifar-100 dataset  to height x width x number of channels.
-        Shuffles all data then splits the data to train and validation sets.
+        ***Note:
+            Dataset is BGR format not RGB!..
+
+        Returns:
+        """
+        test_data = unpickle(self.config.test_data_path)
+        x_test, y_test = cifar_100_data_transformation(test_data)
+        y_test = one_hot_encoding(y_test, 100)
+
+        self.x_test = x_test
+        self.y_test = y_test
+        self.num_batches_test = int(np.ceil(self.x_test.shape[0] / self.config.batch_size))
+
+
+
+    def __load_train_data(self):
+        """Private function.
+        Reads cifar-100 dataset.
+        Transforms cifar-100 dataset  to height x width x number of channels.
+        Shuffles all data then splits the data to train nd validation sets.
         ***Note:
             Dataset is BGR format not RGB!..
 
         Returns:
         """
         self.all_train_data = unpickle(self.config.train_data_path)
-        test_data = unpickle(self.config.test_data_path)
-        self.meta = unpickle(self.config.meta_data_path)
-
         self.x_all_train, self.y_all_train = cifar_100_data_transformation(self.all_train_data)
         self.y_all_train = one_hot_encoding(self.y_all_train, 100)
 
-        x_test, y_test = cifar_100_data_transformation(test_data)
-        y_test = one_hot_encoding(y_test, 100)
-
-        self.x_test = x_test
-        self.y_test = y_test
+        self.meta = unpickle(self.config.meta_data_path)
 
         self.__shuffle_all_data()
         self.__split_train_val()
 
         self.num_batches_train = int(np.ceil(self.x_train.shape[0] / self.config.batch_size))
         self.num_batches_val = int(np.ceil(self.x_val.shape[0] / self.config.batch_size))
-        self.num_batches_test = int(np.ceil(self.x_test.shape[0] / self.config.batch_size))
+
+    def __load_meta_data(self):
+        """Loads metadata only in case of prediction.
+
+        Returns:
+        """
+        self.meta = unpickle(self.config.meta_data_path)
 
     def __shuffle_all_data(self):
         """Private function.

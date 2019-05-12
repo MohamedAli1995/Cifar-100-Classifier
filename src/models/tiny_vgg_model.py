@@ -98,6 +98,7 @@ class TinyVGG(BaseModel):
                                                                                              global_step=self.global_step_tensor)
             correct_predictions = tf.equal(tf.argmax(y_pred, 1), tf.argmax(self.y, 1))
             self.accuracy = tf.reduce_mean(tf.cast(correct_predictions, tf.float32))
+            self.pred = tf.argmax(y_pred)
 
     def init_saver(self):
-        self.saver = tf.train.Saver(max_to_keep=self.config.max_to_keep)
+        self.saver = tf.train.Saver(max_to_keep=self.config.max_to_keep, save_relative_paths=True)

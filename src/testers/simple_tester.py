@@ -2,6 +2,7 @@ import tensorflow as tf
 from src.base.base_test import BaseTest
 from tqdm import tqdm
 import numpy as np
+import cv2
 class SimpleTester(BaseTest):
     def __init__(self, sess, model, data, config, logger):
         super().__init__(sess, model, data, config, logger)
@@ -28,3 +29,7 @@ class SimpleTester(BaseTest):
         loss, acc = self.sess.run([self.model.cross_entropy, self.model.accuracy],
                                      feed_dict=feed_dict)
         return loss, acc
+
+
+
+
