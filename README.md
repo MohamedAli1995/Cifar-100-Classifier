@@ -147,7 +147,9 @@ Set the following attributes in the config file:
 "mode":"prediction",
 "model":"TinyVGG",
 "checkpoint_dir": set it to the path of the checkpoints of the TinyVgg model.
+"meta_data_path": path to metadata of the training set, e.g: "/content/cifar-100-python/meta"
 ```
+***Note: metadata is needed to print class label.
 Then change directory to the project's folder and run:<br>
 ```python3.6 -m src.mains.main --img_path="Path to your image" --config path_to_config_file```
 
