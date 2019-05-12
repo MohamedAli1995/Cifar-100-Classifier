@@ -2,12 +2,12 @@ import tensorflow as tf
 
 
 class BaseModel:
-    """
-    Standard base_model-class for easy multiple-inheritance.
+    """Standard base_model-class for easy multiple-inheritance.
 
     Attributes:
         config: Config object to store data related to training, testing and validation.
     """
+
     def __init__(self, config):
         self.config = config
         self.init_global_step()
@@ -26,8 +26,7 @@ class BaseModel:
         print("Model saved")
 
     def load(self, sess):
-        """
-        Loads model in directory config.checkpoint_dir.
+        """Loads model in directory config.checkpoint_dir.
 
         Args:
             sess: tensorflow session to work with.
@@ -40,8 +39,7 @@ class BaseModel:
             print("Model loaded")
 
     def init_cur_epoch(self):
-        """
-        Initialize current epoch with 0.
+        """Initialize current epoch with 0.
         Args:
         Returns:
             """
@@ -50,8 +48,7 @@ class BaseModel:
             self.increment_cur_epoch_tensor = tf.assign(self.cur_epoch_tensor, self.cur_epoch_tensor + 1)
 
     def init_global_step(self):
-        """
-        Initialize current epoch with 0.
+        """Initialize current epoch with 0.
         Args:
         Returns:
             """
@@ -59,9 +56,15 @@ class BaseModel:
             self.global_step_tensor = tf.Variable(0, trainable=False, name='global_step')
 
     def init_saver(self):
-        # copy this.
-        # self.saver = tf.train.Saver(max_to_keep=self.config.max_to_keep)
+        """Initialize tensorflow saver.
+        Args:
+        Returns:
+            """
         raise NotImplemented
 
     def build_model(self):
+        """Build the architecture of the model.
+        Args:
+        Returns:
+            """
         raise NotImplemented
