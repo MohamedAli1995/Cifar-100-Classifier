@@ -10,6 +10,7 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 - [Config file](#config-file)
 - [How to train](#Model-training)
 - [How to test](#Model-testing)
+- [How to predict images using pretrained models](#Make-predictions-with-pretrained-models)
 
 
 
@@ -82,7 +83,7 @@ In order to train, pretrain or test the model you need first to edit the config 
 ```
 {
   "mode":"train",                  - mode:train, test, prediction.
-  "model":"TinyVgg",               - model_name to be used, leave it to TinyVGG it has the best accuracy. 
+  "model":"TinyVGG",               - model_name to be used, leave it to TinyVGG it has the best accuracy. 
   "num_epochs": 800,               - Numer of epochs to train the model if it is in train mode.
   "learning_rate": 0.0001,         - Learning rate used for training the model.
   "batch_size": 256,               - Batch size for training, validation and testing sets(#TODO: edit single batch_size per mode)
@@ -120,7 +121,7 @@ set:<br>
 "checkpoint_dir": path to store checkpoints, e.g: "/content/saved_models/tiny_vgg_model/checkpoint/"
 "summary_dir": path to store the model summaries for tensorboard, e.g: "/content/saved_models/tiny_vgg_model/summary/"
 ```
-Then run change directory to the project's folder and run:
+Then change directory to the project's folder and run:
 python3.6 -m src.mains.main
 
 # Model testing
@@ -129,6 +130,20 @@ change the following attributes in config file:<br>
 ```
 "mode":"test",
 "test_data_path": set it to the path of test data.
+```
+Then change directory to the project's folder and run:
+python3.6 -m src.mains.main
+
+# Make predictions with pretrained models
+To make predictions by using images of any size and any format:
+Set the following attributes in the config file:
+```
+"mode":"prediction",
+"model":"TinyVGG",
+"checkpoint_dir": set it to the path of the checkpoints of the TinyVgg model.
+```
+Then change directory to the project's folder and run:
+python3.6 -m src.mains.main -img_path="Path to your image"
 
 
 
