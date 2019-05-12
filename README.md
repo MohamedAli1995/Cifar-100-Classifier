@@ -8,7 +8,8 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 - [Project structure](#project-structure)
 - [Dependencies](#install-dependencies)
 - [Config file](#config-file)
-- [Training](#training-dependencies)
+- [How to train](#Model-training)
+- [How to test](#Model-testing)
 
 
 
@@ -99,3 +100,36 @@ In order to train, pretrain or test the model you need first to edit the config 
   "summary_dir":"path_to_store_model_summaries_for_tensorboard"  - Path to summaries store location/.
 }
 ```
+
+# Model training
+In order to train, pretrain or test the model you need first to edit the config file that is described at(#Config-File).<br>
+To train a TinyVGG model:<br>
+set:<br>
+```
+"mode":"train"
+"model":"TinyVGG",
+"num_epochs":200,
+"learning_rate":0.0001,
+"batch_size":256,
+"val_split_ratio":0,
+"state_size":[32, 32, 3],
+"use_val":false,
+"pretrain": Set it to true if you want to pretrain the model found at checkpoint_dir. else set it to false.
+"train_data_path": set it to path of the training data e.g: "/content/train"
+"meta_data_path": path to metadata of the training set, e.g: "/content/cifar-100-python/meta"
+"checkpoint_dir": path to store checkpoints, e.g: "/content/saved_models/tiny_vgg_model/checkpoint/"
+"summary_dir": path to store the model summaries for tensorboard, e.g: "/content/saved_models/tiny_vgg_model/summary/"
+```
+Then run change directory to the project's folder and run:
+python3.6 -m src.mains.main
+
+# Model testing
+To test the model on test_set, things are the same as [model_training](#model-training) except:
+change the following attributes in config file:<br>
+```
+"mode":"test",
+"test_data_path": set it to the path of test data.
+
+
+
+
