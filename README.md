@@ -17,13 +17,12 @@ Folder structure
 
 ```
 ├── Configs            
-│     ├── config_model.json - Contains the paths used and config of the models(learning_rate, num_epochs, ...)
-│     └── any_other_utils_you_need
+│   └── config_model.json  - Contains the paths used and config of the models(learning_rate, num_epochs, ...)
 │     
 ├──  base
-│   ├── base_model.py   - this file contains the abstract class of all models used.
-│   ├── base_train.py   - this file contains the abstract class of the trainer of all models used.
-│   └── base_test.py    - this file contains the abstract class of the testers of all models used.
+│   ├── base_model.py   - This file contains the abstract class of all models used.
+│   ├── base_train.py   - This file contains the abstract class of the trainer of all models used.
+│   └── base_test.py    - This file contains the abstract class of the testers of all models used.
 │
 ├── models              - This folder contains 2 models implemented for cifar-100.
 │   ├── tiny_vgg_model.py  - Contains the architecture of TinyVGG model, this model is somehow a tiny version of vgg16.
@@ -46,6 +45,6 @@ Folder structure
 │    └── preprocessing.py   - Contains helper functions for preprocessing Cifar-100 dataset.
 | 
 └── utils
-     ├── logger.py
-     └── any_other_utils_you_need
-     
+     ├── config.py  - Contains utility functions to handle json config file.
+     ├── logger.py  - Contains Logger class which handles tensorboard.
+     └── utils.py   - Contains utility functions to parse arguments and handle pickle data.     
