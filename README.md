@@ -7,7 +7,8 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 
 - [Project structure](#project-structure)
 - [Dependencies](#install-dependencies)
-
+- [Config file](#config-file)
+- [Training](#training-dependencies)
 
 
 
@@ -73,4 +74,27 @@ pip3 install bunch
 * tqdm
 ```
 pip3 install tqdm
+```
+
+# Config File
+In order to train, pretrain or test the model you need first to edit the config file:
+```
+{
+  "mode":"train",                  - mode:train, test, prediction.
+  "num_epochs": 800,               - Numer of epochs to train the model if it is in train mode.
+  "learning_rate": 0.0001,         - Learning rate used for training the model.
+  "batch_size": 256,               - Batch size for training, validation and testing sets(#TODO: edit single batch_size per mode)
+  "val_per_epoch": 1,              - Get validation set acc and loss per val_per_epoch. (Can be ignored).
+  "state_size": [32, 32, 3],       - Input shape if in train or test mode(can be ignored in predicitonn mode).
+  "val_split_ratio":0.2,           - Ratio to split validation and training set.
+  "max_to_keep":1,                 - Maximum number of checkpoints to keep.
+  "use_val":false,                 - If set to false, the model is trained on the whole training set.
+  "pretrain": true,                - Should be set to true when we pretrain the model.
+
+  "train_data_path":"path_to_training_set",                      - Path to training data.
+  "test_data_path":"path_to_test_set",                           - Path to test data.
+  "meta_data_path":"path_to_dataset_meta_data",                  - Path to meta-data. 
+  "checkpoint_dir":"path_to_store_the_model_checkpoints",        - Path to checkpoints store location.
+  "summary_dir":"path_to_store_model_summaries_for_tensorboard"  - Path to summaries store location.
+}
 ```
