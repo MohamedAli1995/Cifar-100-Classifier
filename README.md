@@ -1,5 +1,5 @@
 # Cifar-100-Classifier
-A Cifar-100 classifier with well designed architecture and good OOP design.<br>
+A Cifar-100 classifier using a tiny version of VGG16.<br>
 This project follows the **best practice tensorflow folder structure of** [Tensorflow Best Practice](https://github.com/MrGemy95/Tensorflow-Project-Template) 
 
 
