@@ -28,16 +28,20 @@ class TinyVGGTrainer(BaseTrain):
         self.logger.summarize(cur_it, summaries_dict=summaries_dict)
         self.model.save(self.sess)
 
-
     def train_step(self):
         batch_x, batch_y = self.data.next_batch(batch_type="train")
         feed_dict = {self.model.x: batch_x, self.model.y: batch_y, self.model.is_training: True,
                      self.model.hold_prob: 0.5}
 
-        _, loss, acc = self.sess.run([self.model.train_step, self.model.cross_entropy, self.model.accuracy],
-                                     feed_dict=feed_dict)
+        # Run training for step first with dropout then calculate loss and acc without dropout.
+        self.sess.run([self.model.train_step, self.model.cross_entropy, self.model.accuracy],
+                      feed_dict=feed_dict)
+        # Run without dropout
+        feed_dict = {self.model.x: batch_x, self.model.y: batch_y, self.model.is_training: False,
+                     self.model.hold_prob: 1.0}
+        loss, acc = self.sess.run([self.model.cross_entropy, self.model.accuracy],
+                                  feed_dict=feed_dict)
         return loss, acc
-
 
     def validate_epoch(self):
         loop = tqdm(range(self.data.num_batches_val))
@@ -52,13 +56,11 @@ class TinyVGGTrainer(BaseTrain):
         print("EPOCH: [", self.model.cur_epoch_tensor.eval(self.sess), "] val_accuracy: ",
               acc * 100, "% val_loss: ", loss)
 
-
     def validate_step(self):
         batch_x, batch_y = self.data.next_batch(batch_type="val")
         feed_dict = {self.model.x: batch_x, self.model.y: batch_y, self.model.is_training: False,
                      self.model.hold_prob: 1}
 
         loss, acc = self.sess.run([self.model.cross_entropy, self.model.accuracy],
-                                     feed_dict=feed_dict)
+                                  feed_dict=feed_dict)
         return loss, acc
-
