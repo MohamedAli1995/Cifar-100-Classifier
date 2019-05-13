@@ -112,7 +112,7 @@ In order to train, pretrain or test the model you need first to edit the config 
 ```
 
 # Model training
-In order to train, pretrain or test the model you need first to edit the config file that is described at(#Config-File).<br>
+In order to train, pretrain or test the model you need first to edit the config file that is described at[Config File](#Config-File).<br>
 To train a TinyVGG model:<br>
 set:<br>
 ```
