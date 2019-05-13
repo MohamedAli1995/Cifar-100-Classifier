@@ -14,8 +14,8 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 - [How to predict class of images using pretrained models](#Make-predictions-with-pretrained-models)
 - [Implementation details](#Implementation-details)
      - [TinyVGG architecture](#TinyVGG-model-arch)
-     - [TinyVGG training)(#TinyVGG-training)
-     - [TinyVGG testing)(#TinyVGG-testing)
+     - [TinyVGG training](#TinyVGG-training)
+     - [TinyVGG testing](#TinyVGG-testing)
 
 
 
