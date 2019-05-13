@@ -184,6 +184,6 @@ and loss <br>
      style="float: left; margin-right: 10px;" />
      
 ## TinyVGG testing
-   Acheived testing accuracy of 52% on the cifar-100 test set 
+   Acheived testing accuracy of 53% on the cifar-100 test set 
 
 
