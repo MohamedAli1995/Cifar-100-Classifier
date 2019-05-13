@@ -1,6 +1,6 @@
 {
   "mode":"train",
-  "num_epochs": 800,
+  "num_epochs": 810,
   "num_iter_per_epoch": 11,
   "learning_rate": 0.0001,
   "batch_size": 256,
@@ -9,7 +9,7 @@
   "val_split_ratio":0.2,
   "max_to_keep":1,
   "use_val":false,
-  "pretrain": false,
+  "pretrain": true,
 
 
   "train_data_path":"/content/cifar-100-python/train",
