@@ -25,7 +25,7 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 ```
 ├── Configs            
 │   └── config_model.json  - Contains the paths used and config of the models(learning_rate, num_epochs, ...)
-├── src     
+└── src     
      ├──  base
      │   ├── base_model.py   - This file contains the abstract class of all models used.
      │   ├── base_train.py   - This file contains the abstract class of the trainer of all models used.
