@@ -59,8 +59,8 @@ This project follows the **best practice tensorflow folder structure of** [Tenso
 
 
 # Download pretrained models:
-I have uploaded a pretrained TinyVGG model at [Google Drive](https://drive.google.com/open?id=1LGjmId-4rHdJIcT5Gd7ZKRuaEOHwRg6_)
-**Note: edit checkpoint file because it has absolute path and I am going to fix that soon.
+I have uploaded a pretrained TinyVGG model at [Google Drive](https://drive.google.com/file/d/1_S4QDgc707WNfFP3grDPYxRIdWV9614o/view?usp=sharing)
+
 # Install dependencies
 
 * Python3.x <br>
@@ -173,9 +173,17 @@ Right now for some reasons there is nly one active model, TinyVGG model to use, 
 
 ## TinyVGG training
  I trained the TinyVGG model by splitting training_data into train/val for 200 epoch, then train for 200 epoch using all training_data.<br>
- Acheived train accuracy of 53%
-
+ Acheived val accuracy of 53% (with disabling dropout)<br>
+ and training accuracy of 50% (with enabling dropout)<br>
+ <img src="https://github.com/MohamedAli1995/Cifar-100-Classifier/blob/master/src/models/train_accuracy.png"
+     alt="Image not loaded"
+     style="float: left; margin-right: 10px;" />
+and loss <br>
+ <img src="https://github.com/MohamedAli1995/Cifar-100-Classifier/blob/master/src/models/loss.png"
+     alt="Image not loaded"
+     style="float: left; margin-right: 10px;" />
+     
 ## TinyVGG testing
-   Acheived testing accuracy of 52%
+   Acheived testing accuracy of 52% on the cifar-100 test set 
 
 
