@@ -112,7 +112,7 @@ In order to train, pretrain or test the model you need first to edit the config 
 ```
 
 # Model training
-In order to train, pretrain or test the model you need first to edit the config file that is described at[Config File](#Config-File).<br>
+In order to train, pretrain or test the model you need first to edit the config file that is described at [Config File](#Config-File).<br>
 To train a TinyVGG model:<br>
 set:<br>
 ```
@@ -177,7 +177,7 @@ Right now for some reasons there is nly one active model, TinyVGG model to use, 
  and training accuracy of 50% (with enabling dropout)<br>
  <img src="https://github.com/MohamedAli1995/Cifar-100-Classifier/blob/master/src/models/train_accuracy.png"
      alt="Image not loaded"
-     style="float: left; margin-right: 10px;" />
+     style="float: left; margin-right: 10px;" /> <br>
 and loss <br>
  <img src="https://github.com/MohamedAli1995/Cifar-100-Classifier/blob/master/src/models/loss.png"
      alt="Image not loaded"
