@@ -1,5 +1,5 @@
 {
-  "mode":"train",
+  "mode":"test",
   "num_epochs": 810,
   "num_iter_per_epoch": 11,
   "learning_rate": 0.0001,
